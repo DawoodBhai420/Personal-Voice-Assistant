@@ -2,6 +2,7 @@ import speech_recognition as sr
 import pyttsx3
 import pywhatkit
 import datetime
+import wikipedia
 
 listener = sr.Recognizer()
 engine = pyttsx3.init()
@@ -38,6 +39,11 @@ def run_alina():
         time = datetime.datetime.now().strftime('%I %M %p')
         print(time)
         talk('current time is '+time)
+    elif 'tell me about' in command:
+        thing = command.replace('tell me about',' ')
+        info = wikipedia.summary(thing,1)
+        print(info)
+        talk(info)
 
 
 

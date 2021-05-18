@@ -3,6 +3,7 @@ import pyttsx3
 import pywhatkit
 import datetime
 import wikipedia
+import webbrowser as wb
 
 listener = sr.Recognizer()
 engine = pyttsx3.init()
@@ -44,6 +45,11 @@ def run_alina():
         info = wikipedia.summary(thing,1)
         print(info)
         talk(info)
+    elif '.com' in command:
+        site = command.replace('open',' ')
+        print('opening' + site)
+        talk('opening' + site)
+        wb.open(site)
 
 
 

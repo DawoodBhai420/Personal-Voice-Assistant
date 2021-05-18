@@ -9,11 +9,14 @@ listener = sr.Recognizer()
 engine = pyttsx3.init()
 voices = engine.getProperty('voices')
 engine.setProperty('voice',voices[1].id)
+
 def talk(text):
     engine.say(text)
     engine.runAndWait()
+
 greeting = 'Heyyyyyy guys. its Alina. What can I do for you'
 talk(greeting)
+
 def take_command():
     try:
         with sr.Microphone() as source:
@@ -50,7 +53,6 @@ def run_alina():
         print('opening' + site)
         talk('opening' + site)
         wb.open(site)
-
 
 
 while True:

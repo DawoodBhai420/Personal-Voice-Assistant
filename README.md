@@ -1,9 +1,12 @@
 # Personal-Voice-Assistant
-This is ALINA, a personal voice assistant made by using simple python packages.
+This is ALINA, a personal voice assistant made by using various python modules.
 
-<br>Currently, ALINA can play youtube videos, can tell current time, can search on wikipedia, can open a website.
+## Tasks:
+* playing videos on youtube
+* telling time & date
+* wekipedia search
+* opening a website
 
-<br>To access ALINA, call ALINA and tell her to play some video or tell her to say current time or tell her to search something on wikipedia, or tell her to open a website.
 ## used packages
 * speech_recognition
 * pyttsx3

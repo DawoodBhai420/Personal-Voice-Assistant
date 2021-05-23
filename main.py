@@ -13,13 +13,19 @@ engine = pyttsx3.init()
 voices = engine.getProperty('voices')
 engine.setProperty('voice', voices[1].id)
 
-
 def talk(text):
     engine.say(text)
     engine.runAndWait()
 
+hour = datetime.datetime.now().hour
+if hour >= 0 and hour < 12:
+    talk('Good Morning Cheenu')
+elif hour >= 12 and hour < 18:
+    talk('Good Afternoon Cheenu')
+else:
+    talk('Good Evening Cheenu')
 
-greeting = 'Heyyyyyy guys. its Alina. What can I do for you'
+greeting = 'its Alina. What can I do for you'
 talk(greeting)
 
 
@@ -51,7 +57,7 @@ def run_alina():
         talk('current time is ' + time)
     elif 'date' in command:
         date = datetime.datetime.now()
-        final = [date.day, date.strftime('%B'), date.year,date.strftime('%A')]
+        final = [date.day, date.strftime('%B'), date.year, date.strftime('%A')]
         print(final)
         talk(final)
     elif 'tell me about' in command:
@@ -63,7 +69,8 @@ def run_alina():
         site = command.replace('open', ' ')
         print('opening' + site)
         talk('opening' + site)
-        wb.get('chrome').open(site)
+        chrome = 'C:\Program Files\Google\Chrome\Application\chrome.exe %s'
+        wb.get(chrome).open(site)
 
 
 while True:
